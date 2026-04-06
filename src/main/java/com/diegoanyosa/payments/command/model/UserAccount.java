@@ -2,6 +2,9 @@ package com.diegoanyosa.payments.command.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.CharJdbcType;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -23,6 +26,7 @@ public class UserAccount {
     @Builder.Default
     private BigDecimal balance = BigDecimal.ZERO;
 
+    @JdbcType(CharJdbcType.class)
     @Column(length = 3, nullable = false)
     @Builder.Default
     private String currency = "PEN";

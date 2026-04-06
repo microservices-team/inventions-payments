@@ -2,6 +2,9 @@ package com.diegoanyosa.payments.query.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.CharJdbcType;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -37,6 +40,7 @@ public class TransactionView {
     @Column(nullable = false, precision = 19, scale = 4)
     private BigDecimal amount;
 
+    @JdbcType(CharJdbcType.class)
     @Column(length = 3, nullable = false)
     private String currency;
 
