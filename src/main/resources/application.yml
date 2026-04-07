@@ -1,6 +1,6 @@
 spring:
   application:
-    name: anyosa-payments
+    name: inventions-payments
   config:
     import: optional:configserver:http://${CONFIG_USER:configuser}:${CONFIG_PASS:configpass}@${CONFIG_HOST:localhost}:8888
   datasource:
@@ -19,9 +19,6 @@ spring:
     schemas: payments
     locations: classpath:db/migration
     baseline-on-migrate: true
-
-server:
-  port: 8083
 
 jwt:
   secret: ${JWT_SECRET:change-me-in-production-minimum-32-chars-long!}
