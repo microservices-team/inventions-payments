@@ -1,3 +1,5 @@
 spring:
   application:
     name: inventions-payments
+  config:
+    import: optional:configserver:http://${CONFIG_USER:configuser}:${CONFIG_PASS:configpass}@${CONFIG_HOST:eureka-server}:8888
